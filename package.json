@@ -13,13 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/freeCodeCamp/boilerplate-project-headerparser.git"
+    "url": "https://github.com/Gakai/fcc-project-timestamp.git"
   },
-  "bugs": {
-    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
-  },
-  "homepage": "https://github.com/freeCodeCamp/boilerplate-project-headerparser#readme",
-  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "homepage": "https://github.com/Gakai/fcc-project-timestamp#readme",
+  "author": "Steffen Kutscher <fcc@skutscher.de>",
   "keywords": [
     "freeCodeCamp",
     "node",

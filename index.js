@@ -1,3 +1,5 @@
+// Boilerplate code from https://github.com/freeCodeCamp/boilerplate-project-timestamp
+
 // index.js
 // where your node app starts
 
@@ -15,16 +17,26 @@ app.use(cors({ optionsSuccessStatus: 200 })); // some legacy browsers choke on 2
 app.use(express.static('public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
 // your first API endpoint...
-app.get('/api/hello', function (req, res) {
-  res.json({ greeting: 'hello API' });
+app.all('/api/whoami', function(req, res) {
+  const { headers, method, httpVersion, protocol, hostname, path, query } = req
+  res.json({
+    // required by challenge
+    ipaddress: req.ip,
+    language: headers['accept-language'],
+    software: headers['user-agent'],
+    // optional
+    cookies: headers['cookie'],
+    acceptedContent: headers['accept'],
+    method, hostname, path, query, protocol, httpVersion
+  })
 });
 
 // listen for requests :)
-var listener = app.listen(process.env.PORT || 3000, function () {
+var listener = app.listen(process.env.PORT || 3000, function() {
   console.log('Your app is listening on port ' + listener.address().port);
 });
